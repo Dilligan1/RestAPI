@@ -1,0 +1,18 @@
+import json
+
+import requests
+from faker import Faker
+
+
+faker = Faker()
+
+session = requests.Session()
+session.headers = {
+    "Authorization" : "Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6IldGZlRBQ0hzYUhvQ3VML1MiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL215a290cWJvY2t6dnphY2NjdWJ6LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiIzODczYzFhMi0wY2JkLTRhNDQtODRkYS03ZjI1ZTFjMzlkNTUiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzYxMjE1OTQyLCJpYXQiOjE3NjA2MTU5NDIsImVtYWlsIjoiZGlsbGlnYW4wMDdAbWFpbC5ydSIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnsiZW1haWwiOiJkaWxsaWdhbjAwN0BtYWlsLnJ1IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImZ1bGxfbmFtZSI6ImlseWEiLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6IjM4NzNjMWEyLTBjYmQtNGE0NC04NGRhLTdmMjVlMWMzOWQ1NSJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzYwNjE1OTQyfV0sInNlc3Npb25faWQiOiJiNzMwNjc2NS00NTFmLTRlOWQtODI2OS1hN2Q2YjgxNzQ1YTAiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.aWGY8gFlAb175XIs2-gMdEi5rz0wUBZ7rycU1Kz1css",
+    "X-Task-id": "API-1"
+}
+
+response = session.get(
+    url = "https://dev-gs.qa-playground.com/api/v1/users")
+
+print(response.json())
