@@ -82,3 +82,5 @@ def delete_user(user_id: int):
         print(f"Произошла ошибка: {e}")
 
 delete_user(2)
+
+input()
