@@ -6,4 +6,4 @@ COPY ./ /usr/workspace
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["python", "while_true.py"]
+CMD ["python", "example.py"]
