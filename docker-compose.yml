@@ -1,0 +1,18 @@
+services:
+
+  rest-api-pydantic:
+    image: pydantic:v1
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    shm_size: 2gb
+    volumes:
+      - ./:/usr/workspace
+      - /dev/shm:/dev/shm
+    command: /bin/sh -c "pytest -sv"
+    environment:
+      BROWSER: ${BROWSER:-chrome}
+      MARKER: ${MARKER:-smoke}
+      THREADS: ${THREADS:-4}
+    tty: true
