@@ -1,7 +1,7 @@
 services:
 
   rest-api-pydantic:
-    image: pydantic:v1
+    image: pydantic:v2
     build:
       context: .
       dockerfile: Dockerfile
